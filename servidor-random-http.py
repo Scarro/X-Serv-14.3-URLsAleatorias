@@ -23,8 +23,10 @@ try:
         print recvSocket.recv(2048)
         link = str(random.randrange(1000000000))
         print 'Answering back...'
-        recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" + "<html><body><h1>Hola </h1>" +
-                        "<a href='" + link + "'>dame otra</a>" + "</body></html>" + "\r\n")
+        recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
+                        "<html><body><h1>Hola </h1>" +
+                        "<a href='" + link + "'>dame otra</a>" +
+                        "</body></html>" + "\r\n")
         recvSocket.close()
 except KeyboardInterrupt:
     print "Closing binded socket"
