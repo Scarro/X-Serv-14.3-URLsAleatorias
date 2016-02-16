@@ -21,7 +21,7 @@ try:
         (recvSocket, address) = mySocket.accept()
         print 'Request received: '
         print recvSocket.recv(2048)
-        link = str(random.randint(1,1000000000))
+        link = str(random.randint(1, 1000000000))
         print 'Answering back...'
         recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h1>Hola </h1>" +
