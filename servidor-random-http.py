@@ -26,8 +26,8 @@ try:
         print 'Answering back...'
         recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h1>Hola </h1>" +
-                        "<a href='http://localhost:1234/" 
-                        + link + "'>dame otra</a>" +
+                        "<a href='http://localhost:1234/" +
+                        link + "'>dame otra</a>" +
                         "</body></html>" + "\r\n")
         recvSocket.close()
 except KeyboardInterrupt:
