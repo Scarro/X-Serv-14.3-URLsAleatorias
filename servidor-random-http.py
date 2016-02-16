@@ -10,7 +10,8 @@ import random
 mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 mySocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print socket.gethostname()
-mySocket.bind((socket.gethostname(), 1234))
+mySocket.bind(('localhost', 1234))
+# mySocket.bind((socket.gethostname(), 1234))
 
 # 5 respuestas maximo
 mySocket.listen(5)
@@ -25,7 +26,8 @@ try:
         print 'Answering back...'
         recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
                         "<html><body><h1>Hola </h1>" +
-                        "<a href='" + link + "'>dame otra</a>" +
+                        "<a href='http://localhost:1234/" 
+                        + link + "'>dame otra</a>" +
                         "</body></html>" + "\r\n")
         recvSocket.close()
 except KeyboardInterrupt:
